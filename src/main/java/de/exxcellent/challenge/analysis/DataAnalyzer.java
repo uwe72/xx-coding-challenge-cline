@@ -4,6 +4,8 @@ import java.io.IOException;
 
 /**
  * Interface for finding the entry with the minimum spread in a CSV file.
+ *
+ * @author Uwe Clement <uwe.clement@gmail.com>
  */
 public interface DataAnalyzer {
     /**

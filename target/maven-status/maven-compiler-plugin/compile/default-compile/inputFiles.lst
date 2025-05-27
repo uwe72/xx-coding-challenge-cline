@@ -1,7 +1,13 @@
-C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\analysis\AnalyzerFactory.java
-C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\package-info.java
-C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\analysis\DataAnalyzer.java
 C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\analysis\FootballDataAnalyzer.java
 C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\App.java
-C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\csv\CsvFileReader.java
 C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\analysis\WeatherDataAnalyzer.java
+C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\analysis\CsvDataReader.java
+C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\analysis\DataReader.java
+C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\analysis\AnalyzerFactory.java
+C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\analysis\DataProcessingException.java
+C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\analysis\Pipeline.java
+C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\package-info.java
+C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\analysis\DataAnalyzer.java
+C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\analysis\FootballRecord.java
+C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\analysis\AnalyzerPipeline.java
+C:\Projects\coding-challenge\src\main\java\de\exxcellent\challenge\csv\CsvFileReader.java

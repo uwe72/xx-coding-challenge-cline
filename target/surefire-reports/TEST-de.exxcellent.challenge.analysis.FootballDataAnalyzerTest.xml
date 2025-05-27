@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="de.exxcellent.challenge.analysis.FootballDataAnalyzerTest" time="0.123" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="de.exxcellent.challenge.analysis.FootballDataAnalyzerTest" time="0.021" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="DE"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\uclement\AppData\Local\Temp\surefire18218690436303074108\surefirebooter-20250527103315117_3.jar C:\Users\uclement\AppData\Local\Temp\surefire18218690436303074108 2025-05-27T10-33-15_010-jvmRun1 surefire-20250527103315117_1tmp surefire_0-20250527103315117_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\uclement\AppData\Local\Temp\surefire7526175664458405365\surefirebooter-20250527133409105_3.jar C:\Users\uclement\AppData\Local\Temp\surefire7526175664458405365 2025-05-27T13-34-08_995-jvmRun1 surefire-20250527133409105_1tmp surefire_0-20250527133409105_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Projects\coding-challenge\target\test-classes;C:\Projects\coding-challenge\target\classes;C:\Users\uclement\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\uclement\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\uclement\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\uclement\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\uclement\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\uclement\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\uclement\AppData\Local\Temp\surefire18218690436303074108\surefirebooter-20250527103315117_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\uclement\AppData\Local\Temp\surefire7526175664458405365\surefirebooter-20250527133409105_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+7-LTS"/>
@@ -59,9 +59,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testDefaultFootball" classname="de.exxcellent.challenge.analysis.FootballDataAnalyzerTest" time="0.049"/>
-  <testcase name="testSwappedColumns(Path)" classname="de.exxcellent.challenge.analysis.FootballDataAnalyzerTest" time="0.046"/>
+  <testcase name="testSwappedColumns(Path)" classname="de.exxcellent.challenge.analysis.FootballDataAnalyzerTest" time="0.002"/>
+  <testcase name="testHappyPath(Path)" classname="de.exxcellent.challenge.analysis.FootballDataAnalyzerTest" time="0.005"/>
   <testcase name="testEmptyFile(Path)" classname="de.exxcellent.challenge.analysis.FootballDataAnalyzerTest" time="0.003"/>
-  <testcase name="testMissingColumn(Path)" classname="de.exxcellent.challenge.analysis.FootballDataAnalyzerTest" time="0.004"/>
-  <testcase name="testInvalidNumbers(Path)" classname="de.exxcellent.challenge.analysis.FootballDataAnalyzerTest" time="0.002"/>
+  <testcase name="testMissingColumn(Path)" classname="de.exxcellent.challenge.analysis.FootballDataAnalyzerTest" time="0.0"/>
+  <testcase name="testInvalidNumber(Path)" classname="de.exxcellent.challenge.analysis.FootballDataAnalyzerTest" time="0.006"/>
 </testsuite>

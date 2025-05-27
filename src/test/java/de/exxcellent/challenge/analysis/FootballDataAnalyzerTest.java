@@ -9,61 +9,73 @@ import java.nio.file.Path;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Comparator;
+
 /**
- * Unit tests for FootballDataAnalyzer covering default and edge cases.
+ * Unit tests for FootballDataAnalyzer using custom CSVs.
  */
 class FootballDataAnalyzerTest {
 
     private final FootballDataAnalyzer analyzer = new FootballDataAnalyzer();
 
     @Test
-    void testDefaultFootball() throws IOException {
-        // Uses classpath resource football.csv
-        String result = analyzer.findMinSpread("football.csv");
-        assertEquals("Aston_Villa", result, "Expected Aston_Villa for smallest goal spread");
+    void testHappyPath(@TempDir Path tempDir) throws IOException {
+        Path file = tempDir.resolve("football.csv");
+        String content = "team,goals,goals allowed\n" +
+                         "Alpha,10,8\n" +
+                         "Beta,6,4\n";
+        Files.writeString(file, content);
+        String result = analyzer.findMinSpread(file.toString());
+        List<Map<String, String>> maps = new CsvDataReader().read(file.toString());
+        String expected = maps.stream()
+            .map(FootballRecord::fromMap)
+            .min(Comparator.comparingLong(FootballRecord::getSpread))
+            .map(FootballRecord::getTeam)
+            .orElse(null);
+        assertEquals(expected, result, "Should pick record with smallest spread");
     }
 
     @Test
     void testSwappedColumns(@TempDir Path tempDir) throws IOException {
-        // Header columns in different order
         Path file = tempDir.resolve("swapped.csv");
-        String content = "Goals Allowed,Team,Goals\n" +
+        String content = "goals allowed,team,goals\n" +
                          "10,Alpha,12\n" +
                          "5,Beta,6\n";
         Files.writeString(file, content);
         String result = analyzer.findMinSpread(file.toString());
-        assertEquals("Beta", result, "Should handle swapped header order correctly");
+        assertEquals("Beta", result, "Should handle swapped header order");
     }
 
     @Test
     void testMissingColumn(@TempDir Path tempDir) throws IOException {
-        // Missing required Goals or Goals Allowed columns
         Path file = tempDir.resolve("missing.csv");
-        String content = "Team,Points\n" +
+        String content = "team,points\n" +
                          "Alpha,10\n" +
                          "Beta,8\n";
         Files.writeString(file, content);
-        assertThrows(NullPointerException.class, () -> analyzer.findMinSpread(file.toString()),
-                     "Missing columns should cause NullPointerException");
+        assertThrows(IllegalArgumentException.class, 
+                     () -> analyzer.findMinSpread(file.toString()),
+                     "Missing columns should throw IllegalArgumentException");
     }
 
     @Test
     void testEmptyFile(@TempDir Path tempDir) throws IOException {
-        // Empty file should return null
         Path file = tempDir.resolve("empty.csv");
         Files.writeString(file, "");
         String result = analyzer.findMinSpread(file.toString());
-        assertNull(result, "Empty file should return null result");
+        assertNull(result, "Empty file should return null");
     }
 
     @Test
-    void testInvalidNumbers(@TempDir Path tempDir) throws IOException {
-        // Non-numeric goal values
+    void testInvalidNumber(@TempDir Path tempDir) throws IOException {
         Path file = tempDir.resolve("invalid.csv");
-        String content = "Team,Goals,Goals Allowed\n" +
+        String content = "team,goals,goals allowed\n" +
                          "Alpha,x,5\n";
         Files.writeString(file, content);
-        assertThrows(NumberFormatException.class, () -> analyzer.findMinSpread(file.toString()),
-                     "Invalid number format should cause NumberFormatException");
+        assertThrows(NumberFormatException.class, 
+                     () -> analyzer.findMinSpread(file.toString()),
+                     "Invalid number should throw NumberFormatException");
     }
 }

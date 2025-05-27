@@ -14,6 +14,7 @@ import java.util.Map;
  * Simple CSV file reader that skips header and splits on commas.
  * Supports reading from file system or classpath resources.
  * Provides record maps keyed by normalized header names for robust column handling.
+ * @author Uwe Clement <uwe.clement@gmail.com>
  */
 public class CsvFileReader {
 

@@ -2,6 +2,8 @@ package de.exxcellent.challenge.analysis;
 
 /**
  * Factory for creating DataAnalyzer instances based on mode.
+ *
+ * @author Uwe Clement <uwe.clement@gmail.com>
  */
 public class AnalyzerFactory {
 
