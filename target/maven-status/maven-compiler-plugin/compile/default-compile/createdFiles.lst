@@ -1,0 +1,6 @@
+de\exxcellent\challenge\analysis\DataAnalyzer.class
+de\exxcellent\challenge\csv\CsvFileReader.class
+de\exxcellent\challenge\analysis\WeatherDataAnalyzer.class
+de\exxcellent\challenge\App.class
+de\exxcellent\challenge\analysis\FootballDataAnalyzer.class
+de\exxcellent\challenge\analysis\AnalyzerFactory.class
